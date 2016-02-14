@@ -22,6 +22,10 @@ body	{
 .navbar-inverse.project-header .navbar-toggle	{
 	border-color: transparent;
 	margin: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
 }
 .navbar-inverse.project-header .navbar-toggle:focus,
 .navbar-inverse.project-header .navbar-toggle:hover	{
@@ -37,8 +41,8 @@ body	{
 }
 
 .navbar-inverse.project-header .navbar-nav>li>a{
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	margin-left: 2px;
 	margin-right: 2px;
 	color: #333;
@@ -53,7 +57,7 @@ body	{
 .navbar-inverse.project-header .navbar-nav>.active>a:focus,
 .navbar-inverse.project-header .navbar-nav>.active>a:hover	{
 	background-color: #ffffff;
-	color: #a00000;
+	color: #f07000;
 }
 
 .project-header#main-header	{
@@ -69,14 +73,19 @@ body	{
 }
 
 h1	{
-	color: #d00000;
+	color: #f07000;
 	font-weight: bolder;
+	font-size: 24px;
+	margin-bottom: 0px;
+	margin-top: 5px;
 }
 
 h2	{
-	font-size: 22px;
-	color: #a00000;
+	font-size: 100%;
+	color: #b05000;
 	font-weight: bolder;
+	margin-bottom: 5px;
+	margin-top: 0px;
 }
 
 h3	{
