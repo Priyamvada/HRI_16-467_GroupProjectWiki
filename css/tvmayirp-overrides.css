@@ -1,18 +1,20 @@
 body	{
-	color: #333;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #78909c;
+	font-family: 'Oswald', sans-serif;
 }
 #outer-content	{
 	width: 100%;
 	padding-left: 20px;
 	padding-right: 20px;
+	position: absolute;
+	top: 80px;
 }
 #content-panel	{
 }
 
 .project-header	{
 	width: 100%;
-	background-color: #eeeeee;
+	background-color: #37474f;
 	border-color: transparent;
 }
 
@@ -29,35 +31,43 @@ body	{
 }
 .navbar-inverse.project-header .navbar-toggle:focus,
 .navbar-inverse.project-header .navbar-toggle:hover	{
-	background-color: #dedede;
+	background-color: #78909c;
 }
 .navbar-inverse.project-header .icon-bar	{
-	background-color: #333;
+	background-color: #78909c;
+}
+
+.navbar-inverse.project-header .navbar-toggle:focus .icon-bar,
+.navbar-inverse.project-header .navbar-toggle:hover .icon-bar	{
+	background-color: #37474f;
 }
 
 .project-header.navbar-inverse .navbar-collapse,
 .project-header.navbar-inverse .navbar-form {
-	border-color: #dedede;
+	border-color: #78909c;
+	color: #ffffff;
 }
 
-.navbar-inverse.project-header .navbar-nav>li>a{
+.navbar-inverse.project-header .navbar-nav>li>a,
+a.navbar-brand{
 	padding-top: 5px;
 	padding-bottom: 5px;
 	margin-left: 2px;
 	margin-right: 2px;
-	color: #333;
+	color: #78909c;
 }
 
 .navbar-inverse.project-header .navbar-nav>li>a:focus,
 .navbar-inverse.project-header .navbar-nav>li>a:hover	{
-	background-color: #dedede;
+	background-color: #78909c;
+	color: #ffffff;
 }
 
 .navbar-inverse.project-header  .navbar-nav>.active>a,
 .navbar-inverse.project-header .navbar-nav>.active>a:focus,
 .navbar-inverse.project-header .navbar-nav>.active>a:hover	{
 	background-color: #ffffff;
-	color: #f07000;
+	color: #e06666;
 }
 
 .project-header#main-header	{
@@ -73,24 +83,48 @@ body	{
 }
 
 h1	{
-	color: #f07000;
-	font-weight: bolder;
+	color: #ffffff;
 	font-size: 24px;
 	margin-bottom: 0px;
 	margin-top: 5px;
 }
 
-h2	{
+h1>span	{
+	color: #e06666;
+}
+
+.page-title h2	{
 	font-size: 100%;
-	font-style: italic;
-	color: #b05000;
-	margin-bottom: 5px;
+	font-family: 'Average', serif;
+	color: #cacaca;
+	margin-bottom: 10px;
 	margin-top: 0px;
+}
+
+#outer-content h2	{
+
+}
+
+#outer-content .experiment-block	{
+	padding-bottom: 5px;
+	border-bottom: solid #cacaca 0.5px;
+}
+
+#outer-content h3	{
+	color: #37474f;
+}
+
+#outer-content h5	{
+	font-family: 'Oswald', sans-serif;
+}
+
+#outer-content .motivation	{
+	font-family: 'Average', serif;
+	color: #37474f;
 }
 
 h3	{
 	font-size: 18px;
-	font-weight: bolder;
 }
 
 p.text-note	{

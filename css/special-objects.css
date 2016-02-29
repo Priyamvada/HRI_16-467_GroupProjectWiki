@@ -19,3 +19,18 @@
 .green	{
 	background: #66ff66;
 }
+
+.panel-default>.panel-heading	{
+	color: #37474f;
+}
+ .panel-body	{
+ 	font-family: 'Average', serif;
+ }
+
+ .image-container	{
+ 	text-align: center;
+ }
+
+ .full-width-media	{
+ 	width: 100%;
+ }
