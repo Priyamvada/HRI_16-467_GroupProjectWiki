@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <title>HRI LTHs - Experiment Dashboard</title>
+
+    <link href="css/los-tres-experiment.css" rel="stylesheet">
+	</head>
+	<body>
+    <h1>Experiment Controller Dashboard</h1>
+
+    <div class="controls">
+
+      <div id="experiment-connection-state" class="control-group">
+        <label for="connection-state" class="control-label input-group">Connection State</label>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary">
+            <input type="radio" name="connection-state" value="1">Disconnected (Social Robot Initiates)
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="connection-state" value="2">Connected (Asocial Robot Initiates)
+          </label>
+          <label class="btn btn-primary active">
+            <input type="radio" name="connection-state" value="3" checked>Donation (No Interaction Happening)
+          </label>
+        </div>
+        
+      </div>
+
+
+    </div>
+
+		
+
+    <script src="js/experimentController.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <footer>
+      <button id="go-home" onclick="parent.location='/'">Project Home</button>
+    </footer>
+	</body>
+</html>

@@ -19,7 +19,8 @@ import os
 import jinja2
 import logging
 
-from flask import Flask
+from flask import Flask, render_template
+#from flask_socketio import SocketIO
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -27,6 +28,8 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 app = Flask(__name__)
+
+#global mHappiness = 0
 
 
 @app.route('/')
@@ -54,6 +57,15 @@ def references():
     template = JINJA_ENVIRONMENT.get_template('templates/references.html')
     return template.render()
 
+@app.route('/experimentScreen')
+def experimentScreen():
+    template = JINJA_ENVIRONMENT.get_template('templates/experimentScreen.html')
+    return template.render()
+
+@app.route('/experimentController')
+def experimentController():
+    template = JINJA_ENVIRONMENT.get_template('templates/experimentController.html')
+    return template.render()
 # app = webapp2.WSGIApplication([
 # 	('/', MainHandler)
 # ], debug=True)

@@ -20,12 +20,21 @@ handlers:
 - url: /images
   static_dir: images
   application_readable: true
+- url: /pde
+  static_dir: pde
+  application_readable: true
 
 - url: .*
   script: main.app
+
+builtins:
+- deferred: on
 
 libraries:
 - name: jinja2
   version: latest
 - name: webapp2
   version: latest
+
+inbound_services:
+- channel_presence
