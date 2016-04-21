@@ -14,7 +14,25 @@ body {
 }
 .controls .control-group .control-label {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 .controls .control-group label {
   display: block;
+}
+.controls .control-group label.active {
+  color: #000;
+  font-weight: bold;
+}
+.controls .control-group label.repeat {
+  display: inline-block;
+  margin-right: 10px;
+}
+.controls .control-group label.disabled {
+  color: #bbbbbb;
+}
+footer {
+  text-align: center;
+}
+footer .control-label {
+  font-weight: bold;
 }

@@ -22,25 +22,42 @@ void draw(){
   float normPos = (mouseY - min)/(max - min);
   normPos = constrain(normPos, 0, 1);
   println(normPos, absPos, min, center);
-  if (mouseX < width /10) fill(0);
-  if (absPos <= center){
-    //arc(width/2, absPos, .6*width, (center - absPos)*2, PI*normPos/2, PI - PI*normPos/2);
-    arc(width/2, absPos, .6*width, 4 * (max - min)* abs(normPos - .5), PI*normPos/2, PI - PI*normPos/2);
+  if (mouseX < width /2){
+    if (mouseX < width /10) fill(0);
+    else fill(255);
+    if (absPos <= center){
+      //arc(width/2, absPos, .6*width, (center - absPos)*2, PI*normPos/2, PI - PI*normPos/2);
+      arc(width/2, absPos, .6*width, 4 * (max - min)* abs(normPos - .5), PI*normPos/2, PI - PI*normPos/2);
+    }
+    else{
+      //arc(width/2, absPos, .6*width, (absPos - center)*2, 10*PI/8 - PI*(normPos-.5)/2, 14*PI/8 + PI*(normPos-.5)/2);
+      arc(width/2, absPos, .6*width, 4 * (max - min)* abs(normPos - .5), 10*PI/8 - PI*(normPos-.5)/2, 14*PI/8 + PI*(normPos-.5)/2);
+    }
+    fill(0);
+    float r = (max - absPos);
+    pushMatrix();
+    translate(3.5*width/10, height/5);
+    rotate((normPos - .5) * .3 * PI);
+    rect(-40, -(height - absPos)/4, 80, (height - absPos)/2, r, r, r, r);
+    popMatrix();
+    pushMatrix();
+    translate(6.5*width/10, height/5);
+    rotate((normPos - .5) * .3 * - PI);
+    rect(- 40, - (height - absPos)/4, 80, (height - absPos)/2, r, r, r, r);
+    popMatrix();
   }
   else{
-    //arc(width/2, absPos, .6*width, (absPos - center)*2, 10*PI/8 - PI*(normPos-.5)/2, 14*PI/8 + PI*(normPos-.5)/2);
-    arc(width/2, absPos, .6*width, 4 * (max - min)* abs(normPos - .5), 10*PI/8 - PI*(normPos-.5)/2, 14*PI/8 + PI*(normPos-.5)/2);
+    stroke(0);
+    fill(0);
+    textSize(40);
+    String t1 = "Please Donate";
+    float s1 = textWidth(t1);
+    text(t1, width/2 - s1/2, height/10); 
+    textSize(400);
+    String t2 = "$";
+    float s2 = textWidth(t2);
+    text(t2, width/2 - s2/2, 8*height/10);
   }
-  fill(0);
-  float r = (max - absPos);
-  pushMatrix();
-  translate(3.5*width/10, height/5);
-  rotate((normPos - .5) * .3 * PI);
-  rect(-40, -(height - absPos)/4, 80, (height - absPos)/2, r, r, r, r);
-  popMatrix();
-  pushMatrix();
-  translate(6.5*width/10, height/5);
-  rotate((normPos - .5) * .3 * - PI);
-  rect(- 40, - (height - absPos)/4, 80, (height - absPos)/2, r, r, r, r);
-  popMatrix();
+
+  
 }
