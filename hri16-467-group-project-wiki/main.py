@@ -20,7 +20,7 @@ import jinja2
 import logging
 
 from flask import Flask, render_template
-#from flask_socketio import SocketIO
+from flask_socketio import SocketIO
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
