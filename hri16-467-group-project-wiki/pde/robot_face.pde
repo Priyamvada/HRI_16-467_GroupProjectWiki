@@ -26,14 +26,14 @@ void draw(){
   if(connectionState == -1) {
     stroke(0);
     fill(0);
-    textSize(70);
+    textSize(120);
     String t1 = "Please Donate";
     float s1 = textWidth(t1);
-    text(t1, width/2 - s1/2, height/10); 
-    textSize(450);
+    text(t1, width/2 - s1/2, 2.5*height/10); 
+    textSize(350);
     String t2 = "$";
     float s2 = textWidth(t2);
-    text(t2, width/2 - s2/2, 8*height/10);
+    text(t2, width/2 - s2/2, 8.5*height/10);
   }
 
   else  {
