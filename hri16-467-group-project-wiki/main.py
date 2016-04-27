@@ -20,7 +20,7 @@ import jinja2
 import logging
 import flask_socketio
 from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit, send, disconnect
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -28,8 +28,11 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
 
-#global mHappiness = 0
+connectionState = -1
+interactionNumber = -1
 
 
 @app.route('/')
@@ -69,3 +72,20 @@ def experimentController():
 # app = webapp2.WSGIApplication([
 # 	('/', MainHandler)
 # ], debug=True)
+
+@socketio.on('updateInteractionState')
+def trigger_interaction_change(message):
+    connectionState = message['data']['connectionState']
+    interactionNumber = message['data']['interactionNumber']
+    emit('changeInteraction', message, broadcast=True)
+
+@socketio.on('connect')
+def test_connect():
+    print('Server connected')
+
+@socketio.on('disconnect')
+def test_disconnect():
+    print('Client disconnected')
+
+if __name__ == '__main__':
+    socketio.run(app)

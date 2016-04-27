@@ -1,5 +1,9 @@
+@lightgrey: #bbbbbb;
+@bluegrey: #78909c;
+@black: #000;
+
 body	{
-	color: #78909c;
+	color: @bluegrey;
 	font-family: 'Oswald', sans-serif;
 }
 
@@ -10,6 +14,7 @@ body	{
 .controls	{
 	padding-left: 20px;
 	padding-right: 20px;
+
 
 	.control-group	{
 		margin-bottom: 20px;
@@ -24,7 +29,7 @@ body	{
 		}
 
 		label.active {
-			color: #000;
+			color: @black;
 			font-weight: bold;
 		}
 
@@ -34,8 +39,27 @@ body	{
 		}
 
 		label.disabled	{
-			color: #bbbbbb;
+			color: @lightgrey;
 		}
+	}
+}
+
+#experiment-interaction-state	{
+	label {
+		margin-top: 10px;
+	}
+}
+
+#this-robot-controller	{
+	text-align: center;
+	margin-bottom: 20px;
+	.control-label	{
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	label.active {
+		color: @black;
+		font-weight: bold;
 	}
 }
 
@@ -43,7 +67,5 @@ footer	{
 
 	text-align: center;
 
-	.control-label	{
-			font-weight: bold;
-		}
+	border-top: @lightgrey 0.5px solid
 }

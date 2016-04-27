@@ -30,9 +30,22 @@ body {
 .controls .control-group label.disabled {
   color: #bbbbbb;
 }
+#experiment-interaction-state label {
+  margin-top: 10px;
+}
+#this-robot-controller {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#this-robot-controller .control-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#this-robot-controller label.active {
+  color: #000;
+  font-weight: bold;
+}
 footer {
   text-align: center;
-}
-footer .control-label {
-  font-weight: bold;
+  border-top: #bbbbbb 0.5px solid;
 }

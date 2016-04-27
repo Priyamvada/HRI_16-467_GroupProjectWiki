@@ -9,27 +9,43 @@
 			<canvas id="robot-face" data-processing-sources="pde/robot_face.pde"></canvas>
 		</div>
 
+		<div id="this-robot-controller" class="control-group">
+	        <label for="this-robot-state" class="control-label input-group">I am the </label>
+	        <div class="btn-group" data-toggle="buttons">
+	          	<label class="btn btn-primary active">
+	            	<input type="radio" name="this-robot-state" value="S" checked>Social Robot
+	          	</label>
+	          	<label class="btn btn-primary">
+	            	<input type="radio" name="this-robot-state" value="A">Asocial Robot
+	          	</label>
+	        </div>
+	        
+	     </div>
+
 
 
 		<footer>
 			<button id="go-home" onclick="parent.location='/'">Project Home</button>
-
-			<div id="this-robot-controller" class="control-group">
-		        <label for="this-robot-state" class="control-label input-group">I am the </label>
-		        <div class="btn-group" data-toggle="buttons">
-		          	<label class="btn btn-primary active">
-		            	<input type="radio" name="this-robot-state" value="S" checked>Social Robot
-		          	</label>
-		          	<label class="btn btn-primary">
-		            	<input type="radio" name="this-robot-state" value="A">Asocial Robot
-		          	</label>
-		        </div>
-		        
-		     </div>
 		</footer>
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/processing.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+		<script src="js/experimentView.js"></script>
 		<script type="text/javascript">
+			var screen_width = 960,
+				screen_height = 540;
+
+			//processing states
+			var connectionState = -1,
+				interactionNumber = -1,
+				thisRobotState = 'S',
+				speaking = true;
+
+			var timing = 0;
+
+
 
     	</script>
 	</body>
