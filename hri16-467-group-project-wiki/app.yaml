@@ -23,6 +23,9 @@ handlers:
 - url: /pde
   static_dir: pde
   application_readable: true
+- url: /audio
+  static_dir: audio
+  application_readable: true
 
 - url: .*
   script: main.app

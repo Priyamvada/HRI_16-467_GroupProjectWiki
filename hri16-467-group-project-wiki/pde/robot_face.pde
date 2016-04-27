@@ -17,8 +17,8 @@ void draw(){
   float min = 4 * (float)height / 10;
   float max = 8 * (float)height / 10;
   float center = ((float)max - min)/2 + min; 
-  float absPos = constrain(mouseY, min, max);
-  float normPos = (mouseY - min)/(max - min);
+  float absPos = constrain(smile_y, min, max);
+  float normPos = (smile_y - min)/(max - min);
   normPos = constrain(normPos, 0, 1);
   println(normPos, absPos, min, center);
   
@@ -40,7 +40,7 @@ void draw(){
     //Fill mouth when robot is speaking
     if (speaking == true) {
       timing++;
-      float base = 60;
+      float base = 40;
       if((timing > base && timing < (6/4)*base) || (timing > (7/4)*base && timing < (9/4)*base)) {
         fill(0);
       } else if(timing >= (9/4)*base)  {

@@ -87,5 +87,9 @@ def test_connect():
 def test_disconnect():
     print('Client disconnected')
 
+@socketio.on('trigger_replay')
+def trigger_replay(message):
+    emit('replayAudio', message, broadcast=True)
+
 if __name__ == '__main__':
     socketio.run(app)

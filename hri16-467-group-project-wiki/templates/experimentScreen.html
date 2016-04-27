@@ -5,6 +5,64 @@
 		<link href="css/los-tres-experiment.css" rel="stylesheet">
 	</head>
 	<body>
+		<audio id='A1'>
+			<source src="audio/A1GREET.ogg" type="audio/ogg">
+			<source src="audio/A1GREET.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A2'>
+			<source src="audio/A2TOPICINIT.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A3'>
+			<source src="audio/A3INSTRUCTION.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A3-1'>
+			<source src="audio/A3_1INSTRUCTIONREPEAT.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A3-2'>
+			<source src="audio/A3_2INSTRUCTIONREPEAT.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A4-1'>
+			<source src="audio/A4_1ACKNOWLEDGEMENT_POSITIVE.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A4-2'>
+			<source src="audio/A4_2ACKNOWLEDGEMENT_NEGATIVE.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A5-1'>
+			<source src="audio/A5_1PARTING_POSITIVE.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='A5-2'>
+			<source src="audio/A5_2PARTING_NEGATIVE.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S1'>
+			<source src="audio/S1GREET.ogg" type="audio/ogg">
+			<source src="audio/S1GREET.wav" type="audio/wav">
+			<source src="audio/S1GREET.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S2'>
+			<source src="audio/S2TOPICINIT.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S3'>
+			<source src="audio/S3INSTRUCTION.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S3-1'>
+			<source src="audio/S3_1INSTRUCTIONREPEAT.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S3-2'>
+			<source src="audio/S3_2INSTRUCTIONREPEAT.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S4-1'>
+			<source src="audio/S4_1ACKNOWLEDGEMENT_POSITIVE.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S4-2'>
+			<source src="audio/S4_2ACKNOWLEDGEMENT_NEGATIVE.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S5-1'>
+			<source src="audio/S5_1PARTING_POSITIVE.mp3" type="audio/mpeg">
+		</audio>
+		<audio id='S5-2'>
+			<source src="audio/S5_2PARTING_NEGATIVE.mp3" type="audio/mpeg">
+		</audio>
+
 		<div class="robot-screen" >
 			<canvas id="robot-face" data-processing-sources="pde/robot_face.pde"></canvas>
 		</div>
@@ -26,28 +84,31 @@
 
 		<footer>
 			<button id="go-home" onclick="parent.location='/'">Project Home</button>
+			<button id="replay" onclick="parent.location='/'">Project Home</button>
 		</footer>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/processing.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-		<script src="js/experimentView.js"></script>
 		<script type="text/javascript">
 			var screen_width = 960,
-				screen_height = 540;
+				screen_height = 540,
+				smile_y = (4+4/3)* screen_height/10 + 1;
 
 			//processing states
 			var connectionState = -1,
 				interactionNumber = -1,
 				thisRobotState = 'S',
-				speaking = true;
+				speaking = false;
 
 			var timing = 0;
 
 
 
     	</script>
+    	<script src="js/experimentView.js"></script>
+
 	</body>
 
 

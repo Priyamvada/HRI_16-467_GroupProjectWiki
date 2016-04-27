@@ -12,10 +12,6 @@ var constants = {
 var socket;
 
 var interactions = {
-	
-	play: function(interactionNumber)	{
-
-	},
 
 	disableAll: function()	{
 		var returnElements = this.clearAll();
@@ -43,6 +39,7 @@ function init()	{
 	screen.$connectionStateRadioGroup = screen.$controls.find('#experiment-connection-state');
 	screen.$interactionStateRadioGroup = screen.$controls.find('#experiment-interaction-state');
 	screen.$goHome = $(document).find('#go-home');
+	screen.$replayBtn = $(document).find('#replay');
 
 	if(parseFloat(screen.$connectionStateRadioGroup.find('input:checked').val()) === constants.IDLE)	{
 		interactions.disableAll();
@@ -99,6 +96,10 @@ function attachListeners()	{
 		if(socket != null)	{
 			socket.disconnect();
 		}
+	});
+
+	screen.$replayBtn.on('click', function()	{
+		socket.emit('trigger_replay',{});
 	});
 }
 

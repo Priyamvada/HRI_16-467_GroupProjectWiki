@@ -52,10 +52,17 @@
             <input type="radio" name="interaction-state" value="4.1">Positive Acknowledgement
           </label>
           <label class="btn btn-primary repeat">
-            <input type="radio" name="interaction-state" value="4.2">Negative Acknowledgement
+            <input type="radio" name="interaction-state" value="4.2">Negative Acknowledgement (By other Robot)
           </label>
-          <label class="btn btn-primary">
-            <input type="radio" name="interaction-state" value="5">Parting
+          <label class="btn btn-primary repeat">
+            <input type="radio" name="interaction-state" value="4.3">Play Both Together
+          </label>
+          <br>
+          <label class="btn btn-primary repeat">
+            <input type="radio" name="interaction-state" value="5.1">Parting Positive: Helpful Action
+          </label>
+          <label class="btn btn-primary repeat">
+            <input type="radio" name="interaction-state" value="5.2">Parting Negative: No help
           </label>
         </div>
         
@@ -72,6 +79,7 @@
     <script src="js/experimentController.js"></script>
 
     <footer>
+      <button id="replay">Replay Audio</button>
       <button id="go-home" onclick="parent.location='/'">Project Home</button>
     </footer>
 	</body>
