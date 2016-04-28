@@ -48,8 +48,6 @@ var constants = {
 	NONE: -1,
 	SOCIAL: 'S',
 	ASOCIAL: 'A',
-	HAPPY_INTERACTIONS: [4.1, 5.1],
-	UNHAPPY_INTERACTIONS: [4.2]
 };
 
 var socket = io.connect('http://' + document.domain + ':' + location.port);
@@ -82,7 +80,8 @@ socket.on('changeInteraction', function(message)	{
 	if(connectionState === 0)	{
 		
 		if(thisRobotState === constants.SOCIAL)	{
-			if(constants.HAPPY_INTERACTIONS.indexOf(interactionNumber) !== -1)	{
+			if(interactionNumber === 4.1 || interactionNumber === 4.2 || interactionNumber === 4.3
+				|| interactionNumber === 5.1)	{
 				smile_y = expressionLimits.HAPPY_UPPER + factor*rand; //state change
 			}	else	{
 				smile_y = expressionLimits.NEUTRAL + factor*rand; //default state is UNHAPPY
@@ -90,7 +89,8 @@ socket.on('changeInteraction', function(message)	{
 		}	
 
 		else if(thisRobotState === constants.ASOCIAL)	{
-			if(constants.UNHAPPY_INTERACTIONS.indexOf(interactionNumber) !== -1)	{
+			if(interactionNumber === 4.1 || interactionNumber === 4.2 || interactionNumber === 4.3
+				|| interactionNumber === 5.1)	{
 				smile_y = expressionLimits.UNHAPPY_UPPER + factor*rand; //state change
 			}	else	{
 				smile_y = expressionLimits.SERIOUS_UPPER - factor*rand; //default state is HAPPY
@@ -100,7 +100,8 @@ socket.on('changeInteraction', function(message)	{
 	}	else if(connectionState === 1)	{
 		
 		if(thisRobotState === constants.ASOCIAL)	{
-			if(constants.HAPPY_INTERACTIONS.indexOf(interactionNumber) !== -1)	{
+			if(interactionNumber === 4.1 || interactionNumber === 4.2 || interactionNumber === 4.3
+				|| interactionNumber === 5.1)	{
 				smile_y = expressionLimits.NEUTRAL - factor*rand; //state change
 			}	else	{
 				smile_y = expressionLimits.UNHAPPY_UPPER + factor*rand; //default state is UNHAPPY -> ANGRY
@@ -108,7 +109,8 @@ socket.on('changeInteraction', function(message)	{
 		}
 
 		else if(thisRobotState === constants.SOCIAL)	{
-			if(constants.HAPPY_INTERACTIONS.indexOf(interactionNumber) !== -1)	{
+			if(interactionNumber === 4.1 || interactionNumber === 4.2 || interactionNumber === 4.3
+				|| interactionNumber === 5.1)	{
 				smile_y = expressionLimits.NEUTRAL + factor*rand; //state change
 			}	else	{
 				smile_y = expressionLimits.HAPPY_UPPER + factor*rand; //default state is HAPPY
@@ -116,7 +118,7 @@ socket.on('changeInteraction', function(message)	{
 		}
 	}
 
-	playAudio();
+	$(document).find('#play-audio').trigger('click');
 });
 
 socket.on('replayAudio', function(message)	{
